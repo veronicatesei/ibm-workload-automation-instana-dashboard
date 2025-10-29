@@ -1,26 +1,28 @@
 # IBM Workload Automation Instana Dashboard
 Use this dashboard to monitor your Workload Automation ecosystem.
 
-Access the Workload Automation Metrics by integrating Prometheus for Instana dashboard.
+Integrating Workload Automation with Instana enhances your monitoring capabilities by helping you track and manage business process objectives.
 
-You can monitor anything you want, such as web applications, distributed topologies, resource usage, and more.
+You can correlate your workload jobs performance with the real-time health of your underlying infrastructure, turning complex data into clear, actionable insights.
 
-Thanks to the integration, you can generate alerts, monitor and analyze trends, compare historical data, and quickly solve anomaly detections.
+Get real-time alerts for job delays, failures, and performance degradations before they impact your business objectives.
 
-Use the Instana Dashboard to monitor application usage and performances across the different tiers.
+By automatically correlating workload data with infrastructure traces, metrics, and logs, the dashboard can pinpoint the root cause of failures in minutes.
 
-Quickly monitor your environments having all data at your fingertips.
+Import the default Instana Dashboards to monitor Workload Automation in terms of:
 
-You can import the preset Instana Dashboards to Monitor Workload Automation in terms of:
+- Database connection status
 
-- DB connection status
+- Workstation status
 
-- WS Status
+- Job status
 
-- JOB status
+- CPU and HEAP utilization
 
-Once you have imported the dashboard in you Instana Environment, modify all the Widgets Datasource with the one related to your WA environment. 
+- Message queue usage
 
-To view the Workload Automation Instana Dashboad see: [IBM Workload Automation Instana Dashboard](https://github.com/WorkloadAutomation/ibm-workload-automation-instana-dashboard/blob/main/WA_Instana_Dashboard.json)
+Once you have imported the dashboard in you Instana Environment, modify all the Widgets Datasource with the one related to your Workload Automation environment. 
 
-For mor information About Instana and its integration with Workload Automation check the blog [Workload Automation Observability with Instana](http://www.workloadautomation-community.com/blogs/workload-automation-observability-infrastructure-and-metrics-monitoring-with-instana)
+To export the Workload Automation Instana Dashboard, see: [IBM Workload Automation Instana Dashboard](https://github.com/WorkloadAutomation/ibm-workload-automation-instana-dashboard/blob/main/WA_Instana_Dashboard.json)
+
+For mor information about integrating Workload Automation with Instana, see [Workload Automation Observability with Instana](https://www.workloadautomation-community.com/blogs/workload-automation-observability-infrastructure-and-metrics-monitoring-with-instana)
