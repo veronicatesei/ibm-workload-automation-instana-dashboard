@@ -1,757 +1,1463 @@
 {
-"id": "ORc1lIlFR16tdLNiPqE0bw",
-"title": "WA Dashboard",
-"accessRules": [
-{
-"accessType": "READ_WRITE",
-"relationType": "USER",
-"relatedId": "6166b8cf6b1cc20001f0d057"
-}
-],
-"widgets": [
-{
-"id": "CccW2y37WnjVE2_J",
-"title": "SAP ws Link Status",
-"width": 2,
-"height": 4,
-"x": 10,
-"y": 13,
-"type": "bigNumber",
-"config": {
-"formatter": "number.compact",
-"comparisonDecreaseColor": "greenish",
-"metricConfiguration": {
-"metric": "metrics.gauges.application_wa_workstation_linked_boolean{workstation=\"/WA_DWB\"}",
-"tagFilterExpression": {
-"logicalOperator": "AND",
-"elements": [],
-"type": "EXPRESSION"
-},
-"timeShift": 0,
-"allowedCrossSeriesAggregations": [],
-"metricLabel": "Prometheus gauge application_wa_workstation_linked_boolean{workstation=\"/WA_DWB\"}",
-"aggregation": "MEAN",
-"crossSeriesAggregation": "MEAN",
-"source": "INFRASTRUCTURE_METRICS",
-"metricPath": [
-"Others",
-"Prometheus App"
-],
-"type": "prometheus"
-},
-"comparisonIncreaseColor": "redish"
-}
-},
-{
-"id": "1P_dImdQKEZ1-p4y",
-"title": "Oracle ws Conn Status",
-"width": 2,
-"height": 4,
-"x": 0,
-"y": 21,
-"type": "bigNumber",
-"config": {
-"formatter": "number.compact",
-"comparisonDecreaseColor": "greenish",
-"metricConfiguration": {
-"metric": "metrics.gauges.application_wa_workstation_running_boolean{workstation=\"/MASTERAGENTS\"}",
-"tagFilterExpression": {
-"logicalOperator": "AND",
-"elements": [],
-"type": "EXPRESSION"
-},
-"timeShift": 0,
-"allowedCrossSeriesAggregations": [],
-"metricLabel": "Prometheus gauge application_wa_workstation_running_boolean{workstation=\"/MASTERAGENTS\"}",
-"aggregation": "MEAN",
-"crossSeriesAggregation": "MEAN",
-"source": "INFRASTRUCTURE_METRICS",
-"metricPath": [
-"Others",
-"Prometheus App"
-],
-"type": "prometheus"
-},
-"comparisonIncreaseColor": "redish"
-}
-},
-{
-"id": "bF1VGrEcVe1vYSGu",
-"title": "DB Connection",
-"width": 12,
-"height": 13,
-"x": 0,
-"y": 0,
-"type": "chart",
-"config": {
-"shareMaxAxisDomain": false,
-"y1": {
-"formatter": "number.detailed",
-"renderer": "area",
-"metrics": [
-{
-"color": "green",
-"compareToTimeShifted": false,
-"aggregation": "MEAN",
-"label": "DB connection overtime",
-"source": "INFRASTRUCTURE_METRICS",
-"metricPath": [],
-"type": "prometheus",
-"metric": "metrics.gauges.application_wa_DB_connected_boolean",
-"tagFilterExpression": {
-"logicalOperator": "AND",
-"elements": [],
-"type": "EXPRESSION"
-},
-"timeShift": 0,
-"allowedCrossSeriesAggregations": [],
-"metricLabel": "Prometheus gauge application_wa_DB_connected_boolean",
-"crossSeriesAggregation": "MEAN"
-}
-]
-},
-"y2": {
-"formatter": "number.detailed",
-"renderer": "line",
-"metrics": []
-},
-"type": "TIME_SERIES"
-}
-},
-{
-"id": "gyiZZSQXLXZFMjgM",
-"title": "WS Connection Status Overtime",
-"width": 4,
-"height": 13,
-"x": 2,
-"y": 13,
-"type": "chart",
-"config": {
-"shareMaxAxisDomain": false,
-"y1": {
-"formatter": "number.detailed",
-"renderer": "area",
-"metrics": [
-{
-"color": "",
-"compareToTimeShifted": false,
-"aggregation": "MEAN",
-"label": "SAP",
-"source": "INFRASTRUCTURE_METRICS",
-"metricPath": [
-"Others",
-"Prometheus App"
-],
-"type": "prometheus",
-"metric": "metrics.gauges.application_wa_workstation_running_boolean{workstation=\"/MASTERAGENTS\"}",
-"tagFilterExpression": {
-"logicalOperator": "AND",
-"elements": [],
-"type": "EXPRESSION"
-},
-"timeShift": 0,
-"allowedCrossSeriesAggregations": [],
-"metricLabel": "Prometheus gauge application_wa_workstation_running_boolean{workstation=\"/MASTERAGENTS\"}",
-"crossSeriesAggregation": "MEAN"
-},
-{
-"color": "",
-"compareToTimeShifted": false,
-"aggregation": "MEAN",
-"label": "MFT",
-"source": "INFRASTRUCTURE_METRICS",
-"metricPath": [
-"Others",
-"Prometheus App"
-],
-"type": "prometheus",
-"metric": "metrics.gauges.application_wa_workstation_running_boolean{workstation=\"/WA-SERVER_XA\"}",
-"tagFilterExpression": {
-"logicalOperator": "AND",
-"elements": [],
-"type": "EXPRESSION"
-},
-"timeShift": 0,
-"allowedCrossSeriesAggregations": [],
-"metricLabel": "Prometheus gauge application_wa_workstation_running_boolean{workstation=\"/WA-SERVER_XA\"}",
-"crossSeriesAggregation": "SUM"
-},
-{
-"color": "",
-"compareToTimeShifted": false,
-"aggregation": "MEAN",
-"label": "Oracle",
-"source": "INFRASTRUCTURE_METRICS",
-"metricPath": [
-"Others",
-"Prometheus App"
-],
-"type": "prometheus",
-"metric": "metrics.gauges.application_wa_workstation_running_boolean{workstation=\"/MASTERAGENTS\"}",
-"tagFilterExpression": {
-"logicalOperator": "AND",
-"elements": [],
-"type": "EXPRESSION"
-},
-"timeShift": 0,
-"allowedCrossSeriesAggregations": [],
-"metricLabel": "Prometheus gauge application_wa_workstation_running_boolean{workstation=\"/MASTERAGENTS\"}",
-"crossSeriesAggregation": "MEAN"
-},
-{
-"color": "",
-"compareToTimeShifted": false,
-"aggregation": "MEAN",
-"label": "Powercenter",
-"source": "INFRASTRUCTURE_METRICS",
-"metricPath": [
-"Others",
-"Prometheus App"
-],
-"type": "prometheus",
-"metric": "metrics.gauges.application_wa_workstation_running_boolean{workstation=\"/WA-SERVER_XA\"}",
-"tagFilterExpression": {
-"logicalOperator": "AND",
-"elements": [],
-"type": "EXPRESSION"
-},
-"timeShift": 0,
-"allowedCrossSeriesAggregations": [],
-"metricLabel": "Prometheus gauge application_wa_workstation_running_boolean{workstation=\"/WA-SERVER_XA\"}",
-"crossSeriesAggregation": "MEAN"
-},
-{
-"color": "",
-"compareToTimeShifted": false,
-"aggregation": "MEAN",
-"label": "Database",
-"source": "INFRASTRUCTURE_METRICS",
-"metricPath": [
-"Others",
-"Prometheus App"
-],
-"type": "prometheus",
-"metric": "metrics.gauges.application_wa_workstation_running_boolean{workstation=\"/WA_SAGT\"}",
-"tagFilterExpression": {
-"logicalOperator": "AND",
-"elements": [],
-"type": "EXPRESSION"
-},
-"timeShift": 0,
-"allowedCrossSeriesAggregations": [],
-"metricLabel": "Prometheus gauge application_wa_workstation_running_boolean{workstation=\"/WA_SAGT\"}",
-"crossSeriesAggregation": "SUM"
-}
-]
-},
-"y2": {
-"formatter": "number.detailed",
-"renderer": "line",
-"metrics": []
-},
-"type": "TIME_SERIES"
-}
-},
-{
-"id": "4fsoykaK8-1H8DIO",
-"title": "SAP ws Conn Status",
-"width": 2,
-"height": 4,
-"x": 0,
-"y": 13,
-"type": "bigNumber",
-"config": {
-"formatter": "number.compact",
-"comparisonDecreaseColor": "greenish",
-"metricConfiguration": {
-"metric": "metrics.gauges.application_wa_workstation_running_boolean{workstation=\"/EU-DYNPOOL\"}",
-"tagFilterExpression": {
-"logicalOperator": "AND",
-"elements": [],
-"type": "EXPRESSION"
-},
-"timeShift": 0,
-"allowedCrossSeriesAggregations": [],
-"metricLabel": "Prometheus gauge application_wa_workstation_running_boolean{workstation=\"/EU-DYNPOOL\"}",
-"aggregation": "MEAN",
-"crossSeriesAggregation": "MEAN",
-"source": "INFRASTRUCTURE_METRICS",
-"metricPath": [
-"Others",
-"Prometheus App"
-],
-"type": "prometheus"
-},
-"comparisonIncreaseColor": "redish"
-}
-},
-{
-"id": "OyWFv0Ho90OscQ3H",
-"title": "Job Status Pie Chart",
-"width": 6,
-"height": 16,
-"x": 6,
-"y": 26,
-"type": "pie",
-"config": {
-"shareMaxAxisDomain": false,
-"y1": {
-"formatter": "number.compact",
-"renderer": "pie",
-"metrics": [
-{
-"color": "green",
-"metric": "metrics.gauges.application_wa_JobsInPlanCount_job{jobstatus=\"SUCCESSFUL\"}",
-"tagFilterExpression": {
-"logicalOperator": "AND",
-"elements": [],
-"type": "EXPRESSION"
-},
-"timeShift": 0,
-"metricLabel": "Prometheus gauge application_wa_JobsInPlanCount_job{jobstatus=\"SUCCESSFUL\"}",
-"compareToTimeShifted": false,
-"aggregation": "MEAN",
-"crossSeriesAggregation": "MEAN",
-"label": "Successful",
-"source": "INFRASTRUCTURE_METRICS",
-"type": "prometheus"
-},
-{
-"color": "pink",
-"metric": "metrics.gauges.application_wa_JobsInPlanCount_job{jobstatus=\"CANCELED\"}",
-"tagFilterExpression": {
-"logicalOperator": "AND",
-"elements": [],
-"type": "EXPRESSION"
-},
-"timeShift": 0,
-"metricLabel": "Prometheus gauge application_wa_JobsInPlanCount_job{jobstatus=\"CANCELED\"}",
-"compareToTimeShifted": false,
-"aggregation": "MEAN",
-"crossSeriesAggregation": "SUM",
-"label": "Canceled",
-"source": "INFRASTRUCTURE_METRICS",
-"type": "prometheus"
-},
-{
-"color": "red",
-"metric": "metrics.gauges.application_wa_JobsInPlanCount_job{jobstatus=\"ERROR\"}",
-"tagFilterExpression": {
-"logicalOperator": "AND",
-"elements": [],
-"type": "EXPRESSION"
-},
-"timeShift": 0,
-"metricLabel": "Prometheus gauge application_wa_JobsInPlanCount_job{jobstatus=\"ERROR\"}",
-"compareToTimeShifted": false,
-"aggregation": "MEAN",
-"crossSeriesAggregation": "MEAN",
-"label": "Error",
-"source": "INFRASTRUCTURE_METRICS",
-"type": "prometheus"
-},
-{
-"color": "teal",
-"metric": "metrics.gauges.application_wa_JobsInPlanCount_job{jobstatus=\"READY\"}",
-"tagFilterExpression": {
-"logicalOperator": "AND",
-"elements": [],
-"type": "EXPRESSION"
-},
-"timeShift": 0,
-"metricLabel": "Prometheus gauge application_wa_JobsInPlanCount_job{jobstatus=\"READY\"}",
-"compareToTimeShifted": false,
-"aggregation": "MEAN",
-"crossSeriesAggregation": "MEAN",
-"label": "Ready",
-"source": "INFRASTRUCTURE_METRICS",
-"type": "prometheus"
-},
-{
-"color": "lime",
-"metric": "metrics.gauges.application_wa_JobsInPlanCount_job{jobstatus=\"RUNNING\"}",
-"tagFilterExpression": {
-"logicalOperator": "AND",
-"elements": [],
-"type": "EXPRESSION"
-},
-"timeShift": 0,
-"metricLabel": "Prometheus gauge application_wa_JobsInPlanCount_job{jobstatus=\"RUNNING\"}",
-"compareToTimeShifted": false,
-"aggregation": "MEAN",
-"crossSeriesAggregation": "MEAN",
-"label": "Running",
-"source": "INFRASTRUCTURE_METRICS",
-"type": "prometheus"
-},
-{
-"color": "deepPurple",
-"metric": "metrics.gauges.application_wa_JobsInPlanCount_job{jobstatus=\"WAITING\"}",
-"tagFilterExpression": {
-"logicalOperator": "AND",
-"elements": [],
-"type": "EXPRESSION"
-},
-"timeShift": 0,
-"metricLabel": "Prometheus gauge application_wa_JobsInPlanCount_job{jobstatus=\"WAITING\"}",
-"compareToTimeShifted": false,
-"aggregation": "MEAN",
-"crossSeriesAggregation": "MEAN",
-"label": "Waiting",
-"source": "INFRASTRUCTURE_METRICS",
-"type": "prometheus"
-}
-]
-},
-"y2": {
-"formatter": "number.detailed",
-"renderer": "line",
-"metrics": []
-}
-}
-},
-{
-"id": "MYaL4xZjfNtLQiWo",
-"title": "Oracle ws Link Status",
-"width": 2,
-"height": 4,
-"x": 10,
-"y": 21,
-"type": "bigNumber",
-"config": {
-"formatter": "number.compact",
-"comparisonDecreaseColor": "greenish",
-"metricConfiguration": {
-"metric": "metrics.gauges.application_wa_workstation_linked_boolean{workstation=\"/MASTERAGENTS\"}",
-"tagFilterExpression": {
-"logicalOperator": "AND",
-"elements": [],
-"type": "EXPRESSION"
-},
-"timeShift": 0,
-"allowedCrossSeriesAggregations": [],
-"metricLabel": "Prometheus gauge application_wa_workstation_linked_boolean{workstation=\"/MASTERAGENTS\"}",
-"aggregation": "MEAN",
-"crossSeriesAggregation": "MEAN",
-"source": "INFRASTRUCTURE_METRICS",
-"metricPath": [
-"Others",
-"Prometheus App"
-],
-"type": "prometheus"
-},
-"comparisonIncreaseColor": "redish"
-}
-},
-{
-"id": "gqxTTdzUX01AuIZp",
-"title": "DWB Link Status",
-"width": 2,
-"height": 4,
-"x": 10,
-"y": 17,
-"type": "bigNumber",
-"config": {
-"formatter": "number.compact",
-"comparisonDecreaseColor": "greenish",
-"metricConfiguration": {
-"metric": "metrics.gauges.application_wa_workstation_linked_boolean{workstation=\"/MASTERAGENTS\"}",
-"tagFilterExpression": {
-"logicalOperator": "AND",
-"elements": [],
-"type": "EXPRESSION"
-},
-"timeShift": 0,
-"allowedCrossSeriesAggregations": [],
-"metricLabel": "Prometheus gauge application_wa_workstation_linked_boolean{workstation=\"/MASTERAGENTS\"}",
-"aggregation": "MEAN",
-"crossSeriesAggregation": "MEAN",
-"source": "INFRASTRUCTURE_METRICS",
-"metricPath": [
-"Others",
-"Prometheus App"
-],
-"type": "prometheus"
-},
-"comparisonIncreaseColor": "redish"
-}
-},
-{
-"id": "Dt6JA2UiOqCYB-0f",
-"title": "WS Link Status Overtime",
-"width": 4,
-"height": 13,
-"x": 6,
-"y": 13,
-"type": "chart",
-"config": {
-"shareMaxAxisDomain": false,
-"y1": {
-"formatter": "number.detailed",
-"renderer": "area",
-"metrics": [
-{
-"color": "",
-"compareToTimeShifted": false,
-"aggregation": "MEAN",
-"label": "SAP",
-"source": "INFRASTRUCTURE_METRICS",
-"metricPath": [
-"Others",
-"Prometheus App"
-],
-"type": "prometheus",
-"metric": "metrics.gauges.application_wa_workstation_linked_boolean{workstation=\"/MASTERAGENTS\"}",
-"tagFilterExpression": {
-"logicalOperator": "AND",
-"elements": [],
-"type": "EXPRESSION"
-},
-"timeShift": 0,
-"allowedCrossSeriesAggregations": [],
-"metricLabel": "Prometheus gauge application_wa_workstation_linked_boolean{workstation=\"/MASTERAGENTS\"}",
-"crossSeriesAggregation": "SUM"
-},
-{
-"color": "",
-"compareToTimeShifted": false,
-"aggregation": "MEAN",
-"label": "MFT",
-"source": "INFRASTRUCTURE_METRICS",
-"metricPath": [
-"Others",
-"Prometheus App"
-],
-"type": "prometheus",
-"metric": "metrics.gauges.application_wa_workstation_linked_boolean{workstation=\"/WA-SERVER_XA\"}",
-"tagFilterExpression": {
-"logicalOperator": "AND",
-"elements": [],
-"type": "EXPRESSION"
-},
-"timeShift": 0,
-"allowedCrossSeriesAggregations": [],
-"metricLabel": "Prometheus gauge application_wa_workstation_linked_boolean{workstation=\"/WA-SERVER_XA\"}",
-"crossSeriesAggregation": "SUM"
-},
-{
-"color": "",
-"compareToTimeShifted": false,
-"aggregation": "MEAN",
-"label": "Oracle",
-"source": "INFRASTRUCTURE_METRICS",
-"metricPath": [
-"Others",
-"Prometheus App"
-],
-"type": "prometheus",
-"metric": "metrics.gauges.application_wa_workstation_linked_boolean{workstation=\"/MASTERAGENTS\"}",
-"tagFilterExpression": {
-"logicalOperator": "AND",
-"elements": [],
-"type": "EXPRESSION"
-},
-"timeShift": 0,
-"allowedCrossSeriesAggregations": [],
-"metricLabel": "Prometheus gauge application_wa_workstation_linked_boolean{workstation=\"/MASTERAGENTS\"}",
-"crossSeriesAggregation": "MEAN"
-},
-{
-"color": "",
-"compareToTimeShifted": false,
-"aggregation": "MEAN",
-"label": "Powercenter",
-"source": "INFRASTRUCTURE_METRICS",
-"metricPath": [
-"Others",
-"Prometheus App"
-],
-"type": "prometheus",
-"metric": "metrics.gauges.application_wa_workstation_linked_boolean{workstation=\"/WA-SERVER_XA\"}",
-"tagFilterExpression": {
-"logicalOperator": "AND",
-"elements": [],
-"type": "EXPRESSION"
-},
-"timeShift": 0,
-"allowedCrossSeriesAggregations": [],
-"metricLabel": "Prometheus gauge application_wa_workstation_linked_boolean{workstation=\"/WA-SERVER_XA\"}",
-"crossSeriesAggregation": "MEAN"
-},
-{
-"color": "",
-"compareToTimeShifted": false,
-"aggregation": "MEAN",
-"label": "Database",
-"source": "INFRASTRUCTURE_METRICS",
-"metricPath": [
-"Others",
-"Prometheus App"
-],
-"type": "prometheus",
-"metric": "metrics.gauges.application_wa_workstation_linked_boolean{workstation=\"/WA_SAGT\"}",
-"tagFilterExpression": {
-"logicalOperator": "AND",
-"elements": [],
-"type": "EXPRESSION"
-},
-"timeShift": 0,
-"allowedCrossSeriesAggregations": [],
-"metricLabel": "Prometheus gauge application_wa_workstation_linked_boolean{workstation=\"/WA_SAGT\"}",
-"crossSeriesAggregation": "MEAN"
-}
-]
-},
-"y2": {
-"formatter": "number.detailed",
-"renderer": "line",
-"metrics": []
-},
-"type": "TIME_SERIES"
-}
-},
-{
-"id": "ivWBA4_yWBTG5kwt",
-"title": "Job Status Overtime",
-"width": 6,
-"height": 16,
-"x": 0,
-"y": 26,
-"type": "chart",
-"config": {
-"shareMaxAxisDomain": false,
-"y1": {
-"formatter": "number.compact",
-"renderer": "line",
-"metrics": [
-{
-"color": "pink",
-"metric": "metrics.gauges.application_wa_JobsInPlanCount_job{jobstatus=\"CANCELED\"}",
-"tagFilterExpression": {
-"logicalOperator": "AND",
-"elements": [],
-"type": "EXPRESSION"
-},
-"timeShift": 0,
-"metricLabel": "Prometheus gauge application_wa_JobsInPlanCount_job{jobstatus=\"CANCELED\"}",
-"compareToTimeShifted": false,
-"aggregation": "MEAN",
-"crossSeriesAggregation": "MEAN",
-"label": "Canceled",
-"source": "INFRASTRUCTURE_METRICS",
-"type": "prometheus"
-},
-{
-"color": "red",
-"metric": "metrics.gauges.application_wa_JobsInPlanCount_job{jobstatus=\"ERROR\"}",
-"tagFilterExpression": {
-"logicalOperator": "AND",
-"elements": [],
-"type": "EXPRESSION"
-},
-"timeShift": 0,
-"metricLabel": "Prometheus gauge application_wa_JobsInPlanCount_job{jobstatus=\"ERROR\"}",
-"compareToTimeShifted": false,
-"aggregation": "MEAN",
-"crossSeriesAggregation": "MEAN",
-"label": "Error",
-"source": "INFRASTRUCTURE_METRICS",
-"type": "prometheus"
-},
-{
-"color": "",
-"metric": "metrics.gauges.application_wa_JobsInPlanCount_job{jobstatus=\"READY\"}",
-"tagFilterExpression": {
-"logicalOperator": "AND",
-"elements": [],
-"type": "EXPRESSION"
-},
-"timeShift": 0,
-"metricLabel": "Prometheus gauge application_wa_JobsInPlanCount_job{jobstatus=\"READY\"}",
-"compareToTimeShifted": false,
-"aggregation": "MEAN",
-"crossSeriesAggregation": "MEAN",
-"label": "Ready",
-"source": "INFRASTRUCTURE_METRICS",
-"type": "prometheus"
-},
-{
-"color": "green",
-"metric": "metrics.gauges.application_wa_JobsInPlanCount_job{jobstatus=\"SUCCESSFUL\"}",
-"tagFilterExpression": {
-"logicalOperator": "AND",
-"elements": [],
-"type": "EXPRESSION"
-},
-"timeShift": 0,
-"metricLabel": "Prometheus gauge application_wa_JobsInPlanCount_job{jobstatus=\"SUCCESSFUL\"}",
-"compareToTimeShifted": false,
-"aggregation": "MEAN",
-"crossSeriesAggregation": "MEAN",
-"label": "Successful",
-"source": "INFRASTRUCTURE_METRICS",
-"type": "prometheus"
-},
-{
-"color": "",
-"metric": "metrics.gauges.application_wa_JobsInPlanCount_job{jobstatus=\"WAITING\"}",
-"tagFilterExpression": {
-"logicalOperator": "AND",
-"elements": [],
-"type": "EXPRESSION"
-},
-"timeShift": 0,
-"metricLabel": "Prometheus gauge application_wa_JobsInPlanCount_job{jobstatus=\"WAITING\"}",
-"compareToTimeShifted": false,
-"aggregation": "MEAN",
-"crossSeriesAggregation": "MEAN",
-"label": "Waiting",
-"source": "INFRASTRUCTURE_METRICS",
-"type": "prometheus"
-}
-]
-},
-"y2": {
-"formatter": "number.detailed",
-"renderer": "line",
-"metrics": []
-},
-"type": "TIME_SERIES"
-}
-},
-{
-"id": "Xv500JXoMJQIXE8W",
-"title": "DWB Conn Status",
-"width": 2,
-"height": 4,
-"x": 0,
-"y": 17,
-"type": "bigNumber",
-"config": {
-"formatter": "number.compact",
-"comparisonDecreaseColor": "greenish",
-"metricConfiguration": {
-"metric": "metrics.gauges.application_wa_workstation_running_boolean{workstation=\"/MASTERAGENTS\"}",
-"tagFilterExpression": {
-"logicalOperator": "AND",
-"elements": [],
-"type": "EXPRESSION"
-},
-"timeShift": 0,
-"allowedCrossSeriesAggregations": [],
-"metricLabel": "Prometheus gauge application_wa_workstation_running_boolean{workstation=\"/MASTERAGENTS\"}",
-"aggregation": "MEAN",
-"crossSeriesAggregation": "MEAN",
-"source": "INFRASTRUCTURE_METRICS",
-"metricPath": [
-"Others",
-"Prometheus App"
-],
-"type": "prometheus"
-},
-"comparisonIncreaseColor": "redish"
-}
-}
-],
-"writable": true
+  "rbacTags": [],
+  "accessRules": [
+    {
+      "accessType": "READ",
+      "relationType": "GLOBAL",
+      "relatedId": ""
+    },
+    {
+      "accessType": "READ_WRITE",
+      "relationType": "USER",
+      "relatedId": "681e0c3066a16500014da1e4"
+    },
+    {
+      "accessType": "READ_WRITE",
+      "relationType": "USER",
+      "relatedId": "68b6b08beac323000100f25e"
+    }
+  ],
+  "id": "Euyy5gIPTaSBkiJFGWqX3A",
+  "title": "WA_Instana_Dashboard",
+  "widgets": [
+    {
+      "width": 9,
+      "x": 0,
+      "y": 42,
+      "id": "BXM0jz8Y_A60TrZN",
+      "title": "Message Queue Usage",
+      "type": "chart",
+      "config": {
+        "shareMaxAxisDomain": false,
+        "y1": {
+          "formatter": "percentage.compact",
+          "renderer": "line",
+          "metrics": [
+            {
+              "lastValue": false,
+              "color": "",
+              "compareToTimeShifted": false,
+              "threshold": {
+                "critical": "",
+                "warning": "",
+                "thresholdEnabled": false,
+                "operator": ">="
+              },
+              "aggregation": "MEAN",
+              "label": "Intercom.msg",
+              "source": "INFRASTRUCTURE_METRICS",
+              "type": "jvmRuntimePlatform",
+              "metricPath": [
+                "Others",
+                "JVM"
+              ],
+              "formatter": "number.detailed",
+              "unit": "number",
+              "metric": "micrometer.metrics.gauge.application_wa.msgFileFill{mp_scope=\"application\",msgfile=\"Intercom.msg\",}",
+              "timeShift": 0,
+              "tagFilterExpression": {
+                "logicalOperator": "AND",
+                "elements": [],
+                "type": "EXPRESSION"
+              },
+              "allowedCrossSeriesAggregations": [],
+              "metricLabel": "Micrometer gauge application_wa.msgFileFill{mp_scope=\"application\",msgfile=\"Intercom.msg\",}",
+              "crossSeriesAggregation": "MEAN"
+            },
+            {
+              "lastValue": false,
+              "color": "",
+              "compareToTimeShifted": false,
+              "threshold": {
+                "critical": "",
+                "warning": "",
+                "thresholdEnabled": false,
+                "operator": ">="
+              },
+              "aggregation": "MEAN",
+              "label": "Appserverbox.msg",
+              "source": "INFRASTRUCTURE_METRICS",
+              "type": "jvmRuntimePlatform",
+              "metricPath": [
+                "Others",
+                "JVM"
+              ],
+              "formatter": "number.detailed",
+              "unit": "number",
+              "metric": "micrometer.metrics.gauge.application_wa.msgFileFill{mp_scope=\"application\",msgfile=\"Appserverbox.msg\",}",
+              "timeShift": 0,
+              "tagFilterExpression": {
+                "logicalOperator": "AND",
+                "elements": [],
+                "type": "EXPRESSION"
+              },
+              "allowedCrossSeriesAggregations": [],
+              "metricLabel": "Micrometer gauge application_wa.msgFileFill{mp_scope=\"application\",msgfile=\"Appserverbox.msg\",}",
+              "crossSeriesAggregation": "MEAN"
+            },
+            {
+              "lastValue": false,
+              "color": "",
+              "compareToTimeShifted": false,
+              "threshold": {
+                "critical": "",
+                "warning": "",
+                "thresholdEnabled": false,
+                "operator": ">="
+              },
+              "aggregation": "MEAN",
+              "label": "mirrorbox.msg",
+              "source": "INFRASTRUCTURE_METRICS",
+              "type": "jvmRuntimePlatform",
+              "metricPath": [
+                "Others",
+                "JVM"
+              ],
+              "formatter": "number.detailed",
+              "unit": "number",
+              "metric": "micrometer.metrics.gauge.application_wa.msgFileFill{mp_scope=\"application\",msgfile=\"mirrorbox.msg\",}",
+              "timeShift": 0,
+              "tagFilterExpression": {
+                "logicalOperator": "AND",
+                "elements": [],
+                "type": "EXPRESSION"
+              },
+              "allowedCrossSeriesAggregations": [],
+              "metricLabel": "Micrometer gauge application_wa.msgFileFill{mp_scope=\"application\",msgfile=\"mirrorbox.msg\",}",
+              "crossSeriesAggregation": "MEAN"
+            },
+            {
+              "lastValue": false,
+              "color": "",
+              "compareToTimeShifted": false,
+              "threshold": {
+                "critical": "",
+                "warning": "",
+                "thresholdEnabled": false,
+                "operator": ">="
+              },
+              "aggregation": "MEAN",
+              "label": "Mailbox.msg",
+              "source": "INFRASTRUCTURE_METRICS",
+              "type": "jvmRuntimePlatform",
+              "metricPath": [
+                "Others",
+                "JVM"
+              ],
+              "formatter": "number.detailed",
+              "unit": "number",
+              "metric": "micrometer.metrics.gauge.application_wa.msgFileFill{mp_scope=\"application\",msgfile=\"Mailbox.msg\",}",
+              "timeShift": 0,
+              "tagFilterExpression": {
+                "logicalOperator": "AND",
+                "elements": [],
+                "type": "EXPRESSION"
+              },
+              "allowedCrossSeriesAggregations": [],
+              "metricLabel": "Micrometer gauge application_wa.msgFileFill{mp_scope=\"application\",msgfile=\"Mailbox.msg\",}",
+              "crossSeriesAggregation": "MEAN"
+            },
+            {
+              "lastValue": false,
+              "color": "",
+              "compareToTimeShifted": false,
+              "threshold": {
+                "critical": "",
+                "warning": "",
+                "thresholdEnabled": false,
+                "operator": ">="
+              },
+              "aggregation": "MEAN",
+              "label": "Monbox.msg",
+              "source": "INFRASTRUCTURE_METRICS",
+              "type": "jvmRuntimePlatform",
+              "metricPath": [
+                "Others",
+                "JVM",
+                "Others"
+              ],
+              "formatter": "number.detailed",
+              "unit": "number",
+              "metric": "micrometer.metrics.gauge.application_wa.msgFileFill{mp_scope=\"application\",msgfile=\"Monbox.msg\",}",
+              "timeShift": 0,
+              "tagFilterExpression": {
+                "logicalOperator": "AND",
+                "elements": [],
+                "type": "EXPRESSION"
+              },
+              "allowedCrossSeriesAggregations": [],
+              "metricLabel": "Micrometer gauge application_wa.msgFileFill{mp_scope=\"application\",msgfile=\"Monbox.msg\",}",
+              "crossSeriesAggregation": "MEAN"
+            },
+            {
+              "lastValue": false,
+              "color": "",
+              "compareToTimeShifted": false,
+              "threshold": {
+                "critical": "",
+                "warning": "",
+                "thresholdEnabled": false,
+                "operator": ">="
+              },
+              "aggregation": "MEAN",
+              "label": "auditbox.msg",
+              "source": "INFRASTRUCTURE_METRICS",
+              "type": "jvmRuntimePlatform",
+              "metricPath": [
+                "Others",
+                "JVM"
+              ],
+              "formatter": "number.detailed",
+              "unit": "number",
+              "metric": "micrometer.metrics.gauge.application_wa.msgFileFill{mp_scope=\"application\",msgfile=\"auditbox.msg\",}",
+              "timeShift": 0,
+              "tagFilterExpression": {
+                "logicalOperator": "AND",
+                "elements": [],
+                "type": "EXPRESSION"
+              },
+              "allowedCrossSeriesAggregations": [],
+              "metricLabel": "Micrometer gauge application_wa.msgFileFill{mp_scope=\"application\",msgfile=\"auditbox.msg\",}",
+              "crossSeriesAggregation": "MEAN"
+            },
+            {
+              "lastValue": false,
+              "color": "",
+              "compareToTimeShifted": false,
+              "threshold": {
+                "critical": "",
+                "warning": "",
+                "thresholdEnabled": false,
+                "operator": ">="
+              },
+              "aggregation": "MEAN",
+              "label": "planbox.msg",
+              "source": "INFRASTRUCTURE_METRICS",
+              "type": "jvmRuntimePlatform",
+              "metricPath": [
+                "Others",
+                "JVM"
+              ],
+              "formatter": "number.detailed",
+              "unit": "number",
+              "metric": "micrometer.metrics.gauge.application_wa.msgFileFill{mp_scope=\"application\",msgfile=\"planbox.msg\",}",
+              "timeShift": 0,
+              "tagFilterExpression": {
+                "logicalOperator": "AND",
+                "elements": [],
+                "type": "EXPRESSION"
+              },
+              "allowedCrossSeriesAggregations": [],
+              "metricLabel": "Micrometer gauge application_wa.msgFileFill{mp_scope=\"application\",msgfile=\"planbox.msg\",}",
+              "crossSeriesAggregation": "MEAN"
+            }
+          ],
+          "formatterSelected": true
+        },
+        "y2": {
+          "formatter": "number.detailed",
+          "renderer": "line",
+          "metrics": []
+        },
+        "type": "TIME_SERIES"
+      },
+      "height": 13
+    },
+    {
+      "width": 12,
+      "x": 0,
+      "y": 0,
+      "id": "gIxf5ATiQSP1430R",
+      "title": "Database Connection",
+      "type": "chart",
+      "config": {
+        "shareMaxAxisDomain": false,
+        "y1": {
+          "formatter": "number.detailed",
+          "renderer": "area",
+          "metrics": [
+            {
+              "lastValue": false,
+              "color": "green",
+              "compareToTimeShifted": false,
+              "threshold": {
+                "critical": "",
+                "warning": "",
+                "thresholdEnabled": false,
+                "operator": ">="
+              },
+              "aggregation": "MEAN",
+              "label": "DB Connection Status",
+              "source": "INFRASTRUCTURE_METRICS",
+              "type": "prometheus",
+              "metricPath": [
+                "Others",
+                "Prometheus App"
+              ],
+              "formatter": "number.detailed",
+              "unit": "number",
+              "metric": "metrics.gauges.application_wa_DB_connected_boolean",
+              "timeShift": 0,
+              "tagFilterExpression": {
+                "logicalOperator": "AND",
+                "elements": [],
+                "type": "EXPRESSION"
+              },
+              "allowedCrossSeriesAggregations": [],
+              "metricLabel": "Prometheus gauge application_wa_DB_connected_boolean",
+              "crossSeriesAggregation": "MEAN"
+            }
+          ]
+        },
+        "y2": {
+          "formatter": "number.detailed",
+          "renderer": "line",
+          "metrics": []
+        },
+        "type": "TIME_SERIES"
+      },
+      "height": 13
+    },
+    {
+      "width": 6,
+      "x": 0,
+      "y": 13,
+      "id": "R5X15c16Jwfl5SjR",
+      "title": "WS Link Status",
+      "type": "chart",
+      "config": {
+        "shareMaxAxisDomain": false,
+        "y1": {
+          "formatter": "number.compact",
+          "renderer": "area",
+          "metrics": [
+            {
+              "lastValue": false,
+              "color": "",
+              "compareToTimeShifted": false,
+              "threshold": {
+                "critical": "",
+                "warning": "",
+                "thresholdEnabled": false,
+                "operator": ">="
+              },
+              "aggregation": "MEAN",
+              "label": "Linked Workstations",
+              "source": "INFRASTRUCTURE_METRICS",
+              "type": "prometheus",
+              "metricPath": [
+                "Others",
+                "Prometheus App"
+              ],
+              "grouping": [
+                {
+                  "maxResults": 20,
+                  "by": {
+                    "tagDefinition": {
+                      "path": [
+                        {
+                          "label": "Other"
+                        },
+                        {
+                          "label": "metric.tag.workstation"
+                        }
+                      ],
+                      "name": "metric.tag.workstation",
+                      "availability": [],
+                      "type": "STRING"
+                    },
+                    "groupbyTag": "metric.tag.workstation",
+                    "groupbyTagEntity": "NOT_APPLICABLE",
+                    "groupbyTagSecondLevelKey": ""
+                  },
+                  "includeOthers": false,
+                  "direction": "DESC"
+                }
+              ],
+              "formatter": "number.detailed",
+              "unit": "number",
+              "metric": "metrics.gauges.application_wa_workstation_linked_boolean",
+              "timeShift": 0,
+              "tagFilterExpression": {
+                "logicalOperator": "AND",
+                "elements": [],
+                "type": "EXPRESSION"
+              },
+              "allowedCrossSeriesAggregations": [],
+              "metricLabel": "Prometheus gauge application_wa_workstation_linked_boolean",
+              "crossSeriesAggregation": "MEAN"
+            }
+          ],
+          "formatterSelected": true
+        },
+        "y2": {
+          "formatter": "number.detailed",
+          "renderer": "line",
+          "metrics": []
+        },
+        "type": "TIME_SERIES"
+      },
+      "height": 13
+    },
+    {
+      "width": 3,
+      "x": 9,
+      "y": 48,
+      "id": "s2d88Ui0XhmRFakY",
+      "title": "HEAP Utilization",
+      "type": "bigNumber",
+      "config": {
+        "formatter": "number.detailed",
+        "comparisonDecreaseColor": "greenish",
+        "metricConfiguration": {
+          "lastValue": false,
+          "threshold": {
+            "critical": "80",
+            "warning": "40",
+            "thresholdEnabled": true,
+            "operator": ">="
+          },
+          "aggregation": "MEAN",
+          "source": "INFRASTRUCTURE_METRICS",
+          "type": "prometheus",
+          "metricPath": [
+            "Others",
+            "Prometheus App"
+          ],
+          "formatter": "number.detailed",
+          "unit": "number",
+          "metric": "metrics.gauges.memory_heapUtilization_percent",
+          "timeShift": -3600000,
+          "tagFilterExpression": {
+            "logicalOperator": "AND",
+            "elements": [],
+            "type": "EXPRESSION"
+          },
+          "allowedCrossSeriesAggregations": [],
+          "crossSeriesAggregation": "MEAN"
+        },
+        "comparisonIncreaseColor": "redish",
+        "formatterSelected": false
+      },
+      "height": 6
+    },
+    {
+      "width": 6,
+      "x": 0,
+      "y": 68,
+      "id": "3i-sk-974E172MbG",
+      "title": "Critical Jobs: Potential Risk",
+      "type": "chart",
+      "config": {
+        "shareMaxAxisDomain": false,
+        "y1": {
+          "formatter": "number.detailed",
+          "renderer": "line",
+          "metrics": [
+            {
+              "lastValue": false,
+              "color": "",
+              "compareToTimeShifted": false,
+              "threshold": {
+                "critical": "",
+                "warning": "",
+                "thresholdEnabled": false,
+                "operator": ">="
+              },
+              "aggregation": "MEAN",
+              "label": "",
+              "source": "INFRASTRUCTURE_METRICS",
+              "type": "prometheus",
+              "metricPath": [
+                "Others",
+                "Prometheus App"
+              ],
+              "grouping": [
+                {
+                  "maxResults": 50,
+                  "by": {
+                    "groupbyTag": "metric.tag.criticaJobId",
+                    "groupbyTagEntity": "DESTINATION",
+                    "groupbyTagSecondLevelKey": ""
+                  },
+                  "includeOthers": false,
+                  "direction": "DESC"
+                }
+              ],
+              "formatter": "number.detailed",
+              "unit": "number",
+              "metric": "metrics.gauges.application_wa_criticalJob_potentialRisk_boolean",
+              "timeShift": 0,
+              "tagFilterExpression": {
+                "logicalOperator": "AND",
+                "elements": [],
+                "type": "EXPRESSION"
+              },
+              "allowedCrossSeriesAggregations": [],
+              "metricLabel": "Prometheus gauge application_wa_criticalJob_potentialRisk_boolean",
+              "crossSeriesAggregation": "MEAN"
+            }
+          ],
+          "formatterSelected": false
+        },
+        "y2": {
+          "formatter": "number.detailed",
+          "renderer": "line",
+          "metrics": []
+        },
+        "type": "TIME_SERIES"
+      },
+      "height": 13
+    },
+    {
+      "width": 6,
+      "x": 6,
+      "y": 13,
+      "id": "EFey2MhdDLAo16KY",
+      "title": "WS Running Status",
+      "type": "chart",
+      "config": {
+        "shareMaxAxisDomain": false,
+        "y1": {
+          "formatter": "number.compact",
+          "renderer": "area",
+          "metrics": [
+            {
+              "lastValue": false,
+              "color": "",
+              "compareToTimeShifted": false,
+              "threshold": {
+                "critical": "",
+                "warning": "",
+                "thresholdEnabled": false,
+                "operator": ">="
+              },
+              "aggregation": "MEAN",
+              "label": "Running Workstations",
+              "source": "INFRASTRUCTURE_METRICS",
+              "type": "prometheus",
+              "metricPath": [
+                "Others",
+                "Prometheus App"
+              ],
+              "grouping": [
+                {
+                  "maxResults": 20,
+                  "by": {
+                    "tagDefinition": {
+                      "path": [
+                        {
+                          "label": "Other"
+                        },
+                        {
+                          "label": "metric.tag.workstation"
+                        }
+                      ],
+                      "name": "metric.tag.workstation",
+                      "availability": [],
+                      "type": "STRING"
+                    },
+                    "groupbyTag": "metric.tag.workstation",
+                    "groupbyTagEntity": "NOT_APPLICABLE",
+                    "groupbyTagSecondLevelKey": ""
+                  },
+                  "includeOthers": false,
+                  "direction": "DESC"
+                }
+              ],
+              "formatter": "number.detailed",
+              "unit": "number",
+              "metric": "metrics.gauges.application_wa_workstation_running_boolean",
+              "timeShift": 0,
+              "tagFilterExpression": {
+                "logicalOperator": "AND",
+                "elements": [],
+                "type": "EXPRESSION"
+              },
+              "allowedCrossSeriesAggregations": [],
+              "metricLabel": "Prometheus gauge application_wa_workstation_running_boolean",
+              "crossSeriesAggregation": "MEAN"
+            }
+          ],
+          "formatterSelected": true
+        },
+        "y2": {
+          "formatter": "number.detailed",
+          "renderer": "line",
+          "metrics": []
+        },
+        "type": "TIME_SERIES"
+      },
+      "height": 13
+    },
+    {
+      "width": 3,
+      "x": 9,
+      "y": 42,
+      "id": "YSMtY0umvljTJFZk",
+      "title": "CPU Utilization",
+      "type": "bigNumber",
+      "config": {
+        "formatter": "percentage.detailed",
+        "comparisonDecreaseColor": "greenish",
+        "metricConfiguration": {
+          "lastValue": false,
+          "threshold": {
+            "critical": "80",
+            "warning": "40",
+            "thresholdEnabled": true,
+            "operator": ">="
+          },
+          "aggregation": "MEAN",
+          "source": "INFRASTRUCTURE_METRICS",
+          "type": "prometheus",
+          "metricPath": [
+            "Others",
+            "Prometheus App"
+          ],
+          "formatter": "number.detailed",
+          "unit": "percentage100",
+          "metric": "metrics.gauges.cpu_processCpuUtilization_percent",
+          "timeShift": -3600000,
+          "tagFilterExpression": {
+            "logicalOperator": "AND",
+            "elements": [],
+            "type": "EXPRESSION"
+          },
+          "allowedCrossSeriesAggregations": [],
+          "crossSeriesAggregation": "MEAN"
+        },
+        "comparisonIncreaseColor": "redish",
+        "formatterSelected": false
+      },
+      "height": 6
+    },
+    {
+      "width": 6,
+      "x": 0,
+      "y": 26,
+      "id": "zSfRFmcIEZBtT8GU",
+      "title": "Job Status Overtime",
+      "type": "chart",
+      "config": {
+        "shareMaxAxisDomain": false,
+        "y1": {
+          "formatter": "number.compact",
+          "renderer": "line",
+          "metrics": [
+            {
+              "lastValue": false,
+              "color": "pink",
+              "compareToTimeShifted": false,
+              "threshold": {
+                "critical": "",
+                "warning": "",
+                "thresholdEnabled": false,
+                "operator": ">="
+              },
+              "aggregation": "MEAN",
+              "label": "Canceled",
+              "source": "INFRASTRUCTURE_METRICS",
+              "type": "prometheus",
+              "metricPath": [
+                "Others",
+                "Prometheus App"
+              ],
+              "formatter": "number.detailed",
+              "unit": "number",
+              "metric": "metrics.gauges.application_wa_JobsInPlanCount_job",
+              "timeShift": 0,
+              "tagFilterExpression": {
+                "tagDefinition": {
+                  "path": [
+                    {
+                      "label": "Other"
+                    },
+                    {
+                      "label": "metric.tag.jobstatus"
+                    }
+                  ],
+                  "name": "metric.tag.jobstatus",
+                  "availability": [],
+                  "type": "STRING"
+                },
+                "name": "metric.tag.jobstatus",
+                "type": "TAG_FILTER",
+                "value": "CANCELED",
+                "entity": "NOT_APPLICABLE",
+                "operator": "EQUALS"
+              },
+              "allowedCrossSeriesAggregations": [],
+              "metricLabel": "Prometheus gauge application_wa_JobsInPlanCount_job",
+              "crossSeriesAggregation": "MEAN"
+            },
+            {
+              "lastValue": false,
+              "color": "red",
+              "compareToTimeShifted": false,
+              "threshold": {
+                "critical": "",
+                "warning": "",
+                "thresholdEnabled": false,
+                "operator": ">="
+              },
+              "aggregation": "MEAN",
+              "label": "Error",
+              "source": "INFRASTRUCTURE_METRICS",
+              "type": "prometheus",
+              "metricPath": [
+                "Others",
+                "Prometheus App"
+              ],
+              "formatter": "number.detailed",
+              "unit": "number",
+              "metric": "metrics.gauges.application_wa_JobsInPlanCount_job",
+              "timeShift": 0,
+              "tagFilterExpression": {
+                "tagDefinition": {
+                  "path": [
+                    {
+                      "label": "Other"
+                    },
+                    {
+                      "label": "metric.tag.jobstatus"
+                    }
+                  ],
+                  "name": "metric.tag.jobstatus",
+                  "availability": [],
+                  "type": "STRING"
+                },
+                "name": "metric.tag.jobstatus",
+                "type": "TAG_FILTER",
+                "value": "ERROR",
+                "entity": "NOT_APPLICABLE",
+                "operator": "EQUALS"
+              },
+              "allowedCrossSeriesAggregations": [],
+              "metricLabel": "Prometheus gauge application_wa_JobsInPlanCount_job",
+              "crossSeriesAggregation": "MEAN"
+            },
+            {
+              "lastValue": false,
+              "color": "",
+              "compareToTimeShifted": false,
+              "threshold": {
+                "critical": "",
+                "warning": "",
+                "thresholdEnabled": false,
+                "operator": ">="
+              },
+              "aggregation": "MEAN",
+              "label": "Ready",
+              "source": "INFRASTRUCTURE_METRICS",
+              "type": "prometheus",
+              "metricPath": [
+                "Others",
+                "Prometheus App"
+              ],
+              "formatter": "number.detailed",
+              "unit": "number",
+              "metric": "metrics.gauges.application_wa_JobsInPlanCount_job",
+              "timeShift": 0,
+              "tagFilterExpression": {
+                "tagDefinition": {
+                  "path": [
+                    {
+                      "label": "Other"
+                    },
+                    {
+                      "label": "metric.tag.jobstatus"
+                    }
+                  ],
+                  "name": "metric.tag.jobstatus",
+                  "availability": [],
+                  "type": "STRING"
+                },
+                "name": "metric.tag.jobstatus",
+                "type": "TAG_FILTER",
+                "value": "READY",
+                "entity": "NOT_APPLICABLE",
+                "operator": "EQUALS"
+              },
+              "allowedCrossSeriesAggregations": [],
+              "metricLabel": "Prometheus gauge application_wa_JobsInPlanCount_job",
+              "crossSeriesAggregation": "MEAN"
+            },
+            {
+              "lastValue": false,
+              "color": "green",
+              "compareToTimeShifted": false,
+              "threshold": {
+                "critical": "",
+                "warning": "",
+                "thresholdEnabled": false,
+                "operator": ">="
+              },
+              "aggregation": "MEAN",
+              "label": "Successful",
+              "source": "INFRASTRUCTURE_METRICS",
+              "type": "prometheus",
+              "metricPath": [
+                "Others",
+                "Prometheus App"
+              ],
+              "formatter": "number.detailed",
+              "unit": "number",
+              "metric": "metrics.gauges.application_wa_JobsInPlanCount_job",
+              "timeShift": 0,
+              "tagFilterExpression": {
+                "tagDefinition": {
+                  "path": [
+                    {
+                      "label": "Other"
+                    },
+                    {
+                      "label": "metric.tag.jobstatus"
+                    }
+                  ],
+                  "name": "metric.tag.jobstatus",
+                  "availability": [],
+                  "type": "STRING"
+                },
+                "name": "metric.tag.jobstatus",
+                "type": "TAG_FILTER",
+                "value": "SUCCESSFUL",
+                "entity": "NOT_APPLICABLE",
+                "operator": "EQUALS"
+              },
+              "allowedCrossSeriesAggregations": [],
+              "metricLabel": "Prometheus gauge application_wa_JobsInPlanCount_job",
+              "crossSeriesAggregation": "MEAN"
+            },
+            {
+              "lastValue": false,
+              "color": "cLightBlue",
+              "compareToTimeShifted": false,
+              "threshold": {
+                "critical": "",
+                "warning": "",
+                "thresholdEnabled": false,
+                "operator": ">="
+              },
+              "aggregation": "MEAN",
+              "label": "Waiting",
+              "source": "INFRASTRUCTURE_METRICS",
+              "type": "prometheus",
+              "metricPath": [
+                "Others",
+                "Prometheus App"
+              ],
+              "formatter": "number.detailed",
+              "unit": "number",
+              "metric": "metrics.gauges.application_wa_JobsInPlanCount_job",
+              "timeShift": 0,
+              "tagFilterExpression": {
+                "tagDefinition": {
+                  "path": [
+                    {
+                      "label": "Other"
+                    },
+                    {
+                      "label": "metric.tag.jobstatus"
+                    }
+                  ],
+                  "name": "metric.tag.jobstatus",
+                  "availability": [],
+                  "type": "STRING"
+                },
+                "name": "metric.tag.jobstatus",
+                "type": "TAG_FILTER",
+                "value": "WAITING",
+                "entity": "NOT_APPLICABLE",
+                "operator": "EQUALS"
+              },
+              "allowedCrossSeriesAggregations": [],
+              "metricLabel": "Prometheus gauge application_wa_JobsInPlanCount_job",
+              "crossSeriesAggregation": "MEAN"
+            }
+          ]
+        },
+        "y2": {
+          "formatter": "number.detailed",
+          "renderer": "line",
+          "metrics": []
+        },
+        "type": "TIME_SERIES"
+      },
+      "height": 16
+    },
+    {
+      "width": 6,
+      "x": 6,
+      "y": 55,
+      "id": "l8HNkd4JsQjaEsbK",
+      "title": "Critical Jobs: High Risk ",
+      "type": "chart",
+      "config": {
+        "shareMaxAxisDomain": false,
+        "y1": {
+          "formatter": "number.detailed",
+          "renderer": "line",
+          "metrics": [
+            {
+              "lastValue": false,
+              "color": "",
+              "compareToTimeShifted": false,
+              "threshold": {
+                "critical": "",
+                "warning": "",
+                "thresholdEnabled": false,
+                "operator": ">="
+              },
+              "aggregation": "MEAN",
+              "label": "",
+              "source": "INFRASTRUCTURE_METRICS",
+              "type": "prometheus",
+              "metricPath": [
+                "Others",
+                "Prometheus App"
+              ],
+              "grouping": [
+                {
+                  "maxResults": 50,
+                  "by": {
+                    "groupbyTag": "metric.tag.criticaJobId",
+                    "groupbyTagEntity": "DESTINATION",
+                    "groupbyTagSecondLevelKey": ""
+                  },
+                  "includeOthers": false,
+                  "direction": "DESC"
+                }
+              ],
+              "formatter": "number.detailed",
+              "unit": "number",
+              "metric": "metrics.gauges.application_wa_criticalJob_highRisk_boolean",
+              "timeShift": 0,
+              "tagFilterExpression": {
+                "logicalOperator": "AND",
+                "elements": [],
+                "type": "EXPRESSION"
+              },
+              "allowedCrossSeriesAggregations": [],
+              "metricLabel": "Prometheus gauge application_wa_criticalJob_highRisk_boolean",
+              "crossSeriesAggregation": "MEAN"
+            }
+          ],
+          "formatterSelected": false
+        },
+        "y2": {
+          "formatter": "number.detailed",
+          "renderer": "line",
+          "metrics": []
+        },
+        "type": "TIME_SERIES"
+      },
+      "height": 13
+    },
+    {
+      "width": 12,
+      "x": 0,
+      "y": 81,
+      "id": "-SquwnMEC7uAu4DJ",
+      "title": "Critical Jobs: Estimate End",
+      "type": "chart",
+      "config": {
+        "shareMaxAxisDomain": false,
+        "y1": {
+          "formatter": "number.detailed",
+          "renderer": "line",
+          "metrics": [
+            {
+              "lastValue": false,
+              "color": "",
+              "compareToTimeShifted": false,
+              "threshold": {
+                "critical": "",
+                "warning": "",
+                "thresholdEnabled": false,
+                "operator": ">="
+              },
+              "aggregation": "MEAN",
+              "label": "",
+              "source": "INFRASTRUCTURE_METRICS",
+              "type": "prometheus",
+              "metricPath": [
+                "Others",
+                "Prometheus App"
+              ],
+              "grouping": [
+                {
+                  "maxResults": 50,
+                  "by": {
+                    "groupbyTag": "metric.tag.criticaJobId",
+                    "groupbyTagEntity": "DESTINATION",
+                    "groupbyTagSecondLevelKey": ""
+                  },
+                  "includeOthers": false,
+                  "direction": "DESC"
+                }
+              ],
+              "formatter": "number.detailed",
+              "unit": "number",
+              "metric": "metrics.gauges.application_wa_criticalJob_estimateEnd_seconds",
+              "timeShift": 0,
+              "tagFilterExpression": {
+                "logicalOperator": "AND",
+                "elements": [],
+                "type": "EXPRESSION"
+              },
+              "allowedCrossSeriesAggregations": [],
+              "metricLabel": "Prometheus gauge application_wa_criticalJob_estimateEnd_seconds",
+              "crossSeriesAggregation": "MEAN"
+            }
+          ],
+          "formatterSelected": false
+        },
+        "y2": {
+          "formatter": "number.detailed",
+          "renderer": "line",
+          "metrics": []
+        },
+        "type": "TIME_SERIES"
+      },
+      "height": 13
+    },
+    {
+      "width": 6,
+      "x": 0,
+      "y": 55,
+      "id": "QqZ8TRyV0hgcTMQy",
+      "title": "Critical Jobs: Incomplete Predecessors",
+      "type": "chart",
+      "config": {
+        "shareMaxAxisDomain": false,
+        "y1": {
+          "formatter": "number.detailed",
+          "renderer": "line",
+          "metrics": [
+            {
+              "lastValue": false,
+              "color": "",
+              "compareToTimeShifted": false,
+              "threshold": {
+                "critical": "",
+                "warning": "",
+                "thresholdEnabled": false,
+                "operator": ">="
+              },
+              "aggregation": "MEAN",
+              "label": "",
+              "source": "INFRASTRUCTURE_METRICS",
+              "type": "prometheus",
+              "metricPath": [
+                "Others",
+                "Prometheus App"
+              ],
+              "grouping": [
+                {
+                  "maxResults": 50,
+                  "by": {
+                    "groupbyTag": "metric.tag.criticaJobId",
+                    "groupbyTagEntity": "DESTINATION",
+                    "groupbyTagSecondLevelKey": ""
+                  },
+                  "includeOthers": false,
+                  "direction": "DESC"
+                }
+              ],
+              "formatter": "number.detailed",
+              "unit": "number",
+              "metric": "metrics.gauges.application_wa_criticalJob_incompletePredecessor_jobs",
+              "timeShift": 0,
+              "tagFilterExpression": {
+                "logicalOperator": "AND",
+                "elements": [],
+                "type": "EXPRESSION"
+              },
+              "allowedCrossSeriesAggregations": [],
+              "metricLabel": "Prometheus gauge application_wa_criticalJob_incompletePredecessor_jobs",
+              "crossSeriesAggregation": "MEAN"
+            }
+          ],
+          "formatterSelected": false
+        },
+        "y2": {
+          "formatter": "number.detailed",
+          "renderer": "line",
+          "metrics": []
+        },
+        "type": "TIME_SERIES"
+      },
+      "height": 13
+    },
+    {
+      "width": 6,
+      "x": 6,
+      "y": 68,
+      "id": "0pM_t9OajTuhwyRx",
+      "title": "Critical Jobs: Confidence Factor",
+      "type": "chart",
+      "config": {
+        "shareMaxAxisDomain": false,
+        "y1": {
+          "formatter": "number.detailed",
+          "renderer": "line",
+          "metrics": [
+            {
+              "lastValue": false,
+              "color": "",
+              "compareToTimeShifted": false,
+              "threshold": {
+                "critical": "",
+                "warning": "",
+                "thresholdEnabled": false,
+                "operator": ">="
+              },
+              "aggregation": "MEAN",
+              "label": "",
+              "source": "INFRASTRUCTURE_METRICS",
+              "type": "prometheus",
+              "metricPath": [
+                "Others",
+                "Prometheus App"
+              ],
+              "grouping": [
+                {
+                  "maxResults": 50,
+                  "by": {
+                    "groupbyTag": "metric.tag.criticaJobId",
+                    "groupbyTagEntity": "DESTINATION",
+                    "groupbyTagSecondLevelKey": ""
+                  },
+                  "includeOthers": false,
+                  "direction": "DESC"
+                }
+              ],
+              "formatter": "number.detailed",
+              "unit": "number",
+              "metric": "metrics.gauges.application_wa_criticalJob_confidence_factor",
+              "timeShift": 0,
+              "tagFilterExpression": {
+                "logicalOperator": "AND",
+                "elements": [],
+                "type": "EXPRESSION"
+              },
+              "allowedCrossSeriesAggregations": [],
+              "metricLabel": "Prometheus gauge application_wa_criticalJob_confidence_factor",
+              "crossSeriesAggregation": "MEAN"
+            }
+          ],
+          "formatterSelected": false
+        },
+        "y2": {
+          "formatter": "number.detailed",
+          "renderer": "line",
+          "metrics": []
+        },
+        "type": "TIME_SERIES"
+      },
+      "height": 13
+    },
+    {
+      "width": 6,
+      "x": 6,
+      "y": 26,
+      "id": "sPdTJWWTju2q2hc7",
+      "title": "Job Status Pie Chart",
+      "type": "pie",
+      "config": {
+        "shareMaxAxisDomain": false,
+        "y1": {
+          "formatter": "number.compact",
+          "renderer": "pie",
+          "metrics": [
+            {
+              "lastValue": false,
+              "color": "green",
+              "compareToTimeShifted": false,
+              "threshold": {
+                "critical": "",
+                "warning": "",
+                "thresholdEnabled": false,
+                "operator": ">="
+              },
+              "aggregation": "MEAN",
+              "label": "Successful",
+              "source": "INFRASTRUCTURE_METRICS",
+              "type": "prometheus",
+              "metricPath": [
+                "Others",
+                "Prometheus App"
+              ],
+              "formatter": "number.detailed",
+              "unit": "number",
+              "metric": "metrics.gauges.application_wa_JobsInPlanCount_job",
+              "timeShift": 0,
+              "tagFilterExpression": {
+                "tagDefinition": {
+                  "path": [
+                    {
+                      "label": "Other"
+                    },
+                    {
+                      "label": "metric.tag.jobstatus"
+                    }
+                  ],
+                  "name": "metric.tag.jobstatus",
+                  "availability": [],
+                  "type": "STRING"
+                },
+                "name": "metric.tag.jobstatus",
+                "type": "TAG_FILTER",
+                "value": "SUCCESSFUL",
+                "entity": "NOT_APPLICABLE",
+                "operator": "EQUALS"
+              },
+              "allowedCrossSeriesAggregations": [],
+              "metricLabel": "Prometheus gauge application_wa_JobsInPlanCount_job",
+              "crossSeriesAggregation": "MEAN"
+            },
+            {
+              "lastValue": false,
+              "color": "pink",
+              "compareToTimeShifted": false,
+              "threshold": {
+                "critical": "",
+                "warning": "",
+                "thresholdEnabled": false,
+                "operator": ">="
+              },
+              "aggregation": "MEAN",
+              "label": "Canceled",
+              "source": "INFRASTRUCTURE_METRICS",
+              "type": "prometheus",
+              "metricPath": [
+                "Others",
+                "Prometheus App"
+              ],
+              "formatter": "number.detailed",
+              "unit": "number",
+              "metric": "metrics.gauges.application_wa_JobsInPlanCount_job",
+              "timeShift": 0,
+              "tagFilterExpression": {
+                "tagDefinition": {
+                  "path": [
+                    {
+                      "label": "Other"
+                    },
+                    {
+                      "label": "metric.tag.jobstatus"
+                    }
+                  ],
+                  "name": "metric.tag.jobstatus",
+                  "availability": [],
+                  "type": "STRING"
+                },
+                "name": "metric.tag.jobstatus",
+                "type": "TAG_FILTER",
+                "value": "CANCELED",
+                "entity": "NOT_APPLICABLE",
+                "operator": "EQUALS"
+              },
+              "allowedCrossSeriesAggregations": [],
+              "metricLabel": "Prometheus gauge application_wa_JobsInPlanCount_job",
+              "crossSeriesAggregation": "MEAN"
+            },
+            {
+              "lastValue": false,
+              "color": "red",
+              "compareToTimeShifted": false,
+              "threshold": {
+                "critical": "",
+                "warning": "",
+                "thresholdEnabled": false,
+                "operator": ">="
+              },
+              "aggregation": "MEAN",
+              "label": "Error",
+              "source": "INFRASTRUCTURE_METRICS",
+              "type": "prometheus",
+              "metricPath": [
+                "Others",
+                "Prometheus App"
+              ],
+              "formatter": "number.detailed",
+              "unit": "number",
+              "metric": "metrics.gauges.application_wa_JobsInPlanCount_job",
+              "timeShift": 0,
+              "tagFilterExpression": {
+                "tagDefinition": {
+                  "path": [
+                    {
+                      "label": "Other"
+                    },
+                    {
+                      "label": "metric.tag.jobstatus"
+                    }
+                  ],
+                  "name": "metric.tag.jobstatus",
+                  "availability": [],
+                  "type": "STRING"
+                },
+                "name": "metric.tag.jobstatus",
+                "type": "TAG_FILTER",
+                "value": "ERROR",
+                "entity": "NOT_APPLICABLE",
+                "operator": "EQUALS"
+              },
+              "allowedCrossSeriesAggregations": [],
+              "metricLabel": "Prometheus gauge application_wa_JobsInPlanCount_job",
+              "crossSeriesAggregation": "MEAN"
+            },
+            {
+              "lastValue": false,
+              "color": "teal",
+              "compareToTimeShifted": false,
+              "threshold": {
+                "critical": "",
+                "warning": "",
+                "thresholdEnabled": false,
+                "operator": ">="
+              },
+              "aggregation": "MEAN",
+              "label": "Ready",
+              "source": "INFRASTRUCTURE_METRICS",
+              "type": "prometheus",
+              "metricPath": [
+                "Others",
+                "Prometheus App"
+              ],
+              "formatter": "number.detailed",
+              "unit": "number",
+              "metric": "metrics.gauges.application_wa_JobsInPlanCount_job",
+              "timeShift": 0,
+              "tagFilterExpression": {
+                "tagDefinition": {
+                  "path": [
+                    {
+                      "label": "Other"
+                    },
+                    {
+                      "label": "metric.tag.jobstatus"
+                    }
+                  ],
+                  "name": "metric.tag.jobstatus",
+                  "availability": [],
+                  "type": "STRING"
+                },
+                "name": "metric.tag.jobstatus",
+                "type": "TAG_FILTER",
+                "value": "READY",
+                "entity": "NOT_APPLICABLE",
+                "operator": "EQUALS"
+              },
+              "allowedCrossSeriesAggregations": [],
+              "metricLabel": "Prometheus gauge application_wa_JobsInPlanCount_job",
+              "crossSeriesAggregation": "MEAN"
+            },
+            {
+              "lastValue": false,
+              "color": "lime",
+              "compareToTimeShifted": false,
+              "threshold": {
+                "critical": "",
+                "warning": "",
+                "thresholdEnabled": false,
+                "operator": ">="
+              },
+              "aggregation": "MEAN",
+              "label": "Running",
+              "source": "INFRASTRUCTURE_METRICS",
+              "type": "prometheus",
+              "metricPath": [
+                "Others",
+                "Prometheus App"
+              ],
+              "formatter": "number.detailed",
+              "unit": "number",
+              "metric": "metrics.gauges.application_wa_JobsInPlanCount_job",
+              "timeShift": 0,
+              "tagFilterExpression": {
+                "tagDefinition": {
+                  "path": [
+                    {
+                      "label": "Other"
+                    },
+                    {
+                      "label": "metric.tag.jobstatus"
+                    }
+                  ],
+                  "name": "metric.tag.jobstatus",
+                  "availability": [],
+                  "type": "STRING"
+                },
+                "name": "metric.tag.jobstatus",
+                "type": "TAG_FILTER",
+                "value": "RUNNING",
+                "entity": "NOT_APPLICABLE",
+                "operator": "EQUALS"
+              },
+              "allowedCrossSeriesAggregations": [],
+              "metricLabel": "Prometheus gauge application_wa_JobsInPlanCount_job",
+              "crossSeriesAggregation": "MEAN"
+            },
+            {
+              "lastValue": false,
+              "color": "deepPurple",
+              "compareToTimeShifted": false,
+              "threshold": {
+                "critical": "",
+                "warning": "",
+                "thresholdEnabled": false,
+                "operator": ">="
+              },
+              "aggregation": "MEAN",
+              "label": "Waiting",
+              "source": "INFRASTRUCTURE_METRICS",
+              "type": "prometheus",
+              "metricPath": [
+                "Others",
+                "Prometheus App"
+              ],
+              "formatter": "number.detailed",
+              "unit": "number",
+              "metric": "metrics.gauges.application_wa_JobsInPlanCount_job",
+              "timeShift": 0,
+              "tagFilterExpression": {
+                "tagDefinition": {
+                  "path": [
+                    {
+                      "label": "Other"
+                    },
+                    {
+                      "label": "metric.tag.jobstatus"
+                    }
+                  ],
+                  "name": "metric.tag.jobstatus",
+                  "availability": [],
+                  "type": "STRING"
+                },
+                "name": "metric.tag.jobstatus",
+                "type": "TAG_FILTER",
+                "value": "WAITING",
+                "entity": "NOT_APPLICABLE",
+                "operator": "EQUALS"
+              },
+              "allowedCrossSeriesAggregations": [],
+              "metricLabel": "Prometheus gauge application_wa_JobsInPlanCount_job",
+              "crossSeriesAggregation": "MEAN"
+            }
+          ]
+        },
+        "y2": {
+          "formatter": "number.detailed",
+          "renderer": "line",
+          "metrics": []
+        }
+      },
+      "height": 16
+    }
+  ],
+  "ownerId": "681e0c3066a16500014da1e4",
+  "writable": true
 }
